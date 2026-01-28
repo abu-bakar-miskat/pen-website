@@ -1,7 +1,40 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
 
 export function Footer() {
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when user is near the bottom (within 200px of footer)
+      const scrollPosition = window.scrollY + window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+      const threshold = 200 // pixels from bottom
+
+      if (documentHeight - scrollPosition < threshold) {
+        setShowScrollTop(true)
+      } else {
+        setShowScrollTop(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Check initial state
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <footer className="relative bg-[#1a3a52] text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -142,6 +175,33 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <div className="fixed bottom-8 right-8 z-50">
+          <Button
+            onClick={scrollToTop}
+            size="icon"
+            className="rounded-full p-7 bg-black hover:bg-black/90 text-white shadow-lg transition-all duration-300 hover:scale-110"
+            aria-label="Scroll to top"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
+            </svg>
+          </Button>
+        </div>
+      )}
     </footer>
   )
 }
