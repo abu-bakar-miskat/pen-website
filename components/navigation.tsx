@@ -79,7 +79,8 @@ export function Navigation() {
 
   const isHomePage = pathname === "/"
   const isContactPage = pathname === "/contact"
-  const isTransparent = isContactPage && !isScrolled
+  const isAboutPage = pathname.startsWith("/about")
+  const isTransparent = (isContactPage) && !isScrolled
 
   useEffect(() => {
     const handleScroll = () => {
@@ -136,11 +137,12 @@ export function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-2 h-full">
               <div
-                className="relative flex items-center"
+                className="relative flex items-center h-full"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button 
+                <Link 
+                  href="/about"
                   className={`relative px-4 h-full flex items-center gap-1.5 text-sm font-semibold transition-colors duration-300 ${
                     isTransparent ? "text-white hover:text-white/80" : "text-gray-800 hover:text-[#0a76b9]"
                   }`}
@@ -153,10 +155,10 @@ export function Navigation() {
                   {pathname.startsWith("/about") && (
                     <motion.div
                       layoutId="activeNav"
-                      className={`absolute bottom-0 left-4 right-4 h-0.5 ${isTransparent ? "bg-white" : "bg-[#0a76b9]"}`}
+                      className={`absolute bottom-5.5 left-4 right-4 h-0.5 ${isTransparent ? "bg-white" : "bg-[#0a76b9]"}`}
                     />
                   )}
-                </button>
+                </Link>
 
                 <AnimatePresence>
                   {isAboutOpen && (
@@ -264,17 +266,19 @@ export function Navigation() {
                   <Link 
                     key={link.href} 
                     href={link.href} 
-                    className={`relative px-4 py-2 flex items-center h-10 text-sm font-semibold transition-colors duration-300 ${
+                    className={`relative px-4 flex items-center h-full text-sm font-semibold transition-colors duration-300 ${
                       isTransparent
                         ? (isActive ? "text-white" : "text-white/90 hover:text-white")
                         : (isActive ? "text-[#0a76b9]" : "text-gray-800 hover:text-[#0a76b9]")
                     }`}
                   >
-                    {link.label}
+                    <span className={isActive ? (isTransparent ? "text-white" : "text-[#0a76b9]") : ""}>
+                      {link.label}
+                    </span>
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className={`absolute bottom-0 left-4 right-4 h-0.5 ${isTransparent ? "bg-white" : "bg-[#0a76b9]"}`}
+                        className={`absolute bottom-5.5 left-4 right-4 h-0.5 ${isTransparent ? "bg-white" : "bg-[#0a76b9]"}`}
                       />
                     )}
                   </Link>
@@ -329,7 +333,7 @@ export function Navigation() {
                     onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
                     className="flex items-center justify-between w-full py-4 text-left"
                   >
-                    <span className={`text-2xl font-bold ${pathname.startsWith("/about") ? "text-[#0a76b9]" : "text-gray-900"}`}>
+                    <span className={`text-xl font-bold ${pathname.startsWith("/about") ? "text-[#0a76b9]" : "text-gray-900"}`}>
                       About
                     </span>
                     <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${isMobileAboutOpen ? "rotate-180" : ""} text-gray-400`} />
@@ -363,7 +367,7 @@ export function Navigation() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`block py-4 text-2xl font-bold ${pathname === link.href ? "text-[#0a76b9]" : "text-gray-900"}`}
+                      className={`block py-4 text-xl font-bold ${pathname === link.href ? "text-[#0a76b9]" : "text-gray-900"}`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}
