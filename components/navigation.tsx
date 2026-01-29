@@ -301,6 +301,7 @@ export function Navigation() {
                   animate={isMobileMenuOpen ? { rotate: -45, y: -8, width: "100%" } : { rotate: 0, y: 0, width: "100%" }}
                   className={`h-0.5 rounded-full ${isScrolled || isMobileMenuOpen ? "bg-gray-900" : (isTransparent ? "bg-white" : "bg-gray-900")}`}
                 />
+                {/* <MenuIcon className="h-10 w-auto" /> */}
               </div>
             </button>
           </div>
