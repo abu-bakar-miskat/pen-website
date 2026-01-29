@@ -251,7 +251,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Our Mission */}
-      <SectionWrapper bgColor="white" className="relative overflow-hidden" id="mission">
+      <SectionWrapper bgColor="white" className="z-50 overflow-visible" id="mission">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -358,8 +358,8 @@ export default function AboutPage() {
                   "We work across borders with institutions, partners and communities to promote shared learning, cultural understanding and international engagement.",
                 icon: Globe2,
                 bgColor: "bg-[#fec909]",
-                iconColor: "text-[#033351]",
-                textColor: "text-[#033351]",
+                iconColor: "text-[#564400]",
+                textColor: "text-[#564400]",
               },
               {
                 title: "Workforce-Focused Skills Development",
@@ -368,7 +368,7 @@ export default function AboutPage() {
                 icon: Target,
                 bgColor: "bg-white",
                 iconColor: "text-[#0a76b9]",
-                textColor: "text-gray-900",
+                textColor: "text-[#0a76b9]",
               },
             ].map((item, index) => (
               <Card
@@ -389,7 +389,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* What Drives Us */}
-      <SectionWrapper bgColor="blue" parchment>
+      <SectionWrapper bgColor="blue" parchment className="z-50 overflow-visible">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-6">
             <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-black">What Drives Us</AnimatedHeading>
@@ -407,7 +407,7 @@ export default function AboutPage() {
                 description:
                   "We believe in using education as a powerful tool to connect people and bridge international communities, fostering meaningful relationships across borders.",
                 icon: Globe2,
-                bgColor: "bg-[#033351]",
+                bgColor: "bg-[#25a048]",
                 iconColor: "text-white",
                 textColor: "text-white",
               },
@@ -418,7 +418,7 @@ export default function AboutPage() {
                 icon: Shield,
                 bgColor: "bg-white",
                 iconColor: "text-[#0a76b9]",
-                textColor: "text-gray-900",
+                textColor: "text-[#0a76b9]",
               },
               {
                 title: "Innovation",
@@ -426,35 +426,35 @@ export default function AboutPage() {
                   "We continuously evolve our methods and approaches to meet the dynamic needs of global learners and the rapidly changing education landscape.",
                 icon: Lightbulb,
                 bgColor: "bg-[#fec909]",
-                iconColor: "text-[#033351]",
-                textColor: "text-[#033351]",
+                iconColor: "text-[#564400]",
+                textColor: "text-[#564400]",
               },
               {
                 title: "Empowering Minds",
                 description:
                   "We encourage intellectual growth and creativity by promoting critical thinking and innovation, enabling students to excel in an ever-changing world.",
                 icon: Sparkles,
-                bgColor: "bg-[#25a048]",
-                iconColor: "text-white",
-                textColor: "text-white",
+                bgColor: "bg-[#fec909]",
+                iconColor: "text-[#564400]",
+                textColor: "text-[#564400]",
               },
               {
                 title: "Inclusivity",
                 description:
                   "We are committed to ensuring that all individuals — regardless of background or circumstance — have equal access to high-quality educational opportunities.",
                 icon: Users,
-                bgColor: "bg-[#033351]",
-                iconColor: "text-white",
-                textColor: "text-white",
+                bgColor: "bg-white",
+                iconColor: "text-[#0a76b9]",
+                textColor: "text-[#0a76b9]",
               },
               {
                 title: "Cultural Exchange",
                 description:
                   "We celebrate diversity and champion mutual understanding among cultures, using education to support meaningful cross-cultural engagement.",
                 icon: Heart,
-                bgColor: "bg-[#fec909]",
-                iconColor: "text-[#033351]",
-                textColor: "text-[#033351]",
+                bgColor: "bg-[#25a048]",
+                iconColor: "text-white",
+                textColor: "text-white",
               },
             ].map((item, index) => (
               <Card
@@ -475,7 +475,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Corporate Governance */}
-      <SectionWrapper bgColor="white" className="relative overflow-hidden">
+      <SectionWrapper bgColor="white" parchment className="z-50 overflow-visible">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -489,8 +489,8 @@ export default function AboutPage() {
 
         <div className="max-w-6xl mx-auto space-y-12 relative z-10">
           <div className="flex justify-center">
-            <div className="relative w-full max-w-4xl">
-              <div className="relative aspect-video">
+            <div className="relative w-full max-w-4xl overflow-visible">
+              <div className="relative aspect-video overflow-visible">
                 <div className="absolute inset-0 rounded-[48px] border-[16px] lg:border-[20px] border-[#0a76b9] z-20" />
                 <div className="absolute inset-[16px] lg:inset-[20px] rounded-[32px] lg:rounded-[28px] overflow-hidden shadow-2xl bg-gray-200 z-10">
                   <video
@@ -511,7 +511,7 @@ export default function AboutPage() {
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "linear",
                   }}
-                  className="absolute inset-0 z-30 pointer-events-none"
+                  className="absolute inset-0 z-[100] pointer-events-none"
                 >
                   <div className="absolute -top-6 lg:-top-8 left-[15%] w-20 h-20 lg:w-28 lg:h-28 bg-[#fec909] rounded-full opacity-90 shadow-xl" />
                 </motion.div>
@@ -524,7 +524,7 @@ export default function AboutPage() {
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "linear",
                   }}
-                  className="absolute inset-0 z-30 pointer-events-none"
+                  className="absolute inset-0 z-[100] pointer-events-none"
                 >
                   <div className="absolute -bottom-4 lg:-bottom-6 right-[10%] w-16 h-16 lg:w-24 lg:h-24 bg-[#25a048] rounded-full opacity-85 shadow-lg" />
                 </motion.div>
@@ -537,7 +537,7 @@ export default function AboutPage() {
                     repeat: Number.POSITIVE_INFINITY,
                     ease: "linear",
                   }}
-                  className="absolute inset-0 z-30 pointer-events-none"
+                  className="absolute inset-0 z-[100] pointer-events-none"
                 >
                   <div className="absolute top-[20%] -right-3 lg:-right-4 w-14 h-14 lg:w-20 lg:h-20 bg-[#0a76b9] rounded-full opacity-80 shadow-lg" />
                 </motion.div>
@@ -582,7 +582,7 @@ export default function AboutPage() {
                 icon: Heart,
                 bgColor: "bg-white",
                 iconColor: "text-[#0a76b9]",
-                textColor: "text-gray-900",
+                textColor: "text-[#0a76b9]",
               },
               {
                 title: "Accountability & Oversight",
@@ -590,8 +590,8 @@ export default function AboutPage() {
                   "Leadership teams across the Group operate under structured oversight mechanisms, enabling continuous improvement, compliance monitoring and responsible organisational growth.",
                 icon: Target,
                 bgColor: "bg-[#fec909]",
-                iconColor: "text-[#033351]",
-                textColor: "text-[#033351]",
+                iconColor: "text-[#564400]",
+                textColor: "text-[#564400]",
               },
             ].map((item, index) => (
               <Card
@@ -612,7 +612,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Technology & Innovation */}
-      <SectionWrapper bgColor="yellow" parchment>
+      <SectionWrapper bgColor="yellow" parchment className="z-50 overflow-visible">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="flex justify-center">
             <div className="relative w-full max-w-4xl">
@@ -672,10 +672,10 @@ export default function AboutPage() {
           </div>
 
           <div className="text-center space-y-6">
-            <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-black text-[#033351]">
+            <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-black text-[#564400]">
               Technology & Innovation – What Powers Our Progress
             </AnimatedHeading>
-            <p className="text-lg md:text-2xl text-[#033351]/90 leading-relaxed max-w-4xl mx-auto text-pretty">
+            <p className="text-lg md:text-2xl text-[#564400] leading-relaxed max-w-4xl mx-auto text-pretty">
               PEN Group is committed to advancing education through modern, scalable and impactful technologies that
               enhance teaching, learning and institutional performance.
             </p>
@@ -690,7 +690,7 @@ export default function AboutPage() {
                 icon: Lightbulb,
                 bgColor: "bg-white",
                 iconColor: "text-[#0a76b9]",
-                textColor: "text-gray-900",
+                textColor: "text-[#0a76b9]",
               },
               {
                 title: "Student Experience Enhancement",
@@ -717,7 +717,7 @@ export default function AboutPage() {
                 icon: Globe2,
                 bgColor: "bg-white",
                 iconColor: "text-[#25a048]",
-                textColor: "text-gray-900",
+                textColor: "text-[#25a048]",
               },
             ].map((item, index) => (
               <Card
