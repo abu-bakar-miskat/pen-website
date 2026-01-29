@@ -101,7 +101,7 @@ export default function HomePage() {
               className="relative h-[500px] lg:h-[700px] flex items-center justify-center lg:justify-end lg:-mr-32 xl:-mr-48"
             >
               <div className="relative">
-                <div className="relative w-[500px] h-[500px] lg:w-[700px] lg:h-[700px]">
+                <div className="mt-14 relative w-[500px] h-[500px] lg:w-[700px] lg:h-[700px]">
                   <div className="absolute inset-0 rounded-full border-[20px] lg:border-[28px] border-[#0a76b9] z-20" />
 
                   <div className="absolute inset-[20px] lg:inset-[28px] rounded-full overflow-hidden shadow-2xl z-10 bg-gray-200">
